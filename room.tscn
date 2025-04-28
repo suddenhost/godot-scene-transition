@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://d18eeo47vjul6"]
+
+[ext_resource type="PackedScene" uid="uid://ttfbnot35jyo" path="res://fade_transition_manager.tscn" id="1_88gup"]
+[ext_resource type="Script" uid="uid://drwkfqss3evvm" path="res://room.gd" id="1_bisa2"]
+
+[node name="Room1" type="Node"]
+script = ExtResource("1_bisa2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="New Game" type="Button" parent="MarginContainer/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "New Game"
+
+[node name="Load" type="Button" parent="MarginContainer/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Load"
+
+[node name="Settings" type="Button" parent="MarginContainer/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MarginContainer/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Quit"
+
+[node name="FadeTransitionManager" parent="." instance=ExtResource("1_88gup")]
+
+[connection signal="pressed" from="MarginContainer/Menu/New Game" to="." method="_on_new_game_pressed"]
