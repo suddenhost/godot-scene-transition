@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfxmwfqgb6nrp"]
+[gd_scene load_steps=3 format=3 uid="uid://bmu8wlits5ww7"]
 
 [ext_resource type="Texture2D" uid="uid://tobea8yf2vij" path="res://addons/sudden_fade_plugin/demo/icon.svg" id="1_owswg"]
-[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="2_x2o37"]
+[ext_resource type="Script" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="2_x2o37"]
 
 [node name="Room2" type="Node"]
 

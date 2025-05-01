@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ttfbnot35jyo"]
+[gd_scene load_steps=2 format=3 uid="uid://c3p5gypqp2se7"]
 
-[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="1_l81hk"]
+[ext_resource type="Script" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="1_l81hk"]
 
 [node name="FadeTransitionManager" type="ColorRect"]
 anchors_preset = 15
