@@ -21,6 +21,7 @@ play the fade out animation, but the same scene will continue to be shown.
 - Future versions will be more customizable.
 
 # Sequence Diagram
+![sudden-fade-transition-sequence-diagram](https://github.com/user-attachments/assets/dc4096fe-1241-405c-ba34-d532305a6a05)
 
 
 ## Visual Sample
