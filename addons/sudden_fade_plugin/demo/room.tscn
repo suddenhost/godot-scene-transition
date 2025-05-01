@@ -47,7 +47,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("2_36r46")
-_fade_length = 1.5
 next_scene = ExtResource("3_knpad")
 metadata/_custom_type_script = "uid://c6215vuol8ms2"
 

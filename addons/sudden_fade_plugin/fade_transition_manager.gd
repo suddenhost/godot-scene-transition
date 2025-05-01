@@ -12,7 +12,7 @@ var _next_scene : String
 enum ANIMATION {FADE_IN, FADE_OUT}
 
 @export
-var _fade_length : float = 2
+var _fade_length : float = 1.5
 
 @export
 var next_scene : PackedScene
