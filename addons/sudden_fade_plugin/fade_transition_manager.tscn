@@ -10,3 +10,4 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_l81hk")
+_fade_length = 1.5
