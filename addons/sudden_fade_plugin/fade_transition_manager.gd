@@ -1,22 +1,24 @@
 class_name FadeTransitionManager
 extends ColorRect
+## Fades a scene in and out.
+##
+## This class fades a scene in when it is loaded and 
+## it fades it out when a change to the next scene is
+## requested via its fade_out() method.
 
-var fade_in_player_scene = preload("res://addons/sudden_fade_plugin/fade_in.tscn")
-var fade_out_player_scene = preload("res://addons/sudden_fade_plugin/fade_out.tscn")
+enum ANIMATION {
+	FADE_IN, 
+	FADE_OUT,
+	}
+	
+@export var _fade_length : float = 1.5
+@export var next_scene : PackedScene
 
-var fade_in_player : AnimationPlayer
-var fade_out_player : AnimationPlayer
-
+var _fade_in_player_scene = preload("res://addons/sudden_fade_plugin/fade_in.tscn")
+var _fade_out_player_scene = preload("res://addons/sudden_fade_plugin/fade_out.tscn")
+var _fade_in_player : AnimationPlayer
+var _fade_out_player : AnimationPlayer
 var _next_scene : String
-
-enum ANIMATION {FADE_IN, FADE_OUT}
-
-@export
-var _fade_length : float = 1.5
-
-@export
-var next_scene : PackedScene
-
 var _modulate_path : String
 
 func _ready() -> void:
@@ -25,15 +27,15 @@ func _ready() -> void:
 	_modulate_path = String(self.get_path()) + ":self_modulate"
 	size = get_viewport_rect().size
 	get_tree().root.size_changed.connect(_on_window_resize)
-	fade_in_player = _create_fade_anim_player("FadeIn")
-	fade_out_player = _create_fade_anim_player("FadeOut")
-	fade_out_player.animation_finished.connect(_on_fade_out_animation_finished)
-	fade_in_player.play("Fade/FadeIn")
+	_fade_in_player = _create_fade_anim_player("FadeIn")
+	_fade_out_player = _create_fade_anim_player("FadeOut")
+	_fade_out_player.animation_finished.connect(_on_fade_out_animation_finished)
+	_fade_in_player.play("Fade/FadeIn")
 	
 func fade_out():
-	if fade_in_player.is_playing():
-		fade_in_player.stop()
-	fade_out_player.play("Fade/FadeOut")
+	if _fade_in_player.is_playing():
+		_fade_in_player.stop()
+	_fade_out_player.play("Fade/FadeOut")
 	
 func _on_fade_out_animation_finished(anim_name: StringName) -> void:
 	print(_next_scene)
